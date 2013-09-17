@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-parada = True
-
-while parada:
+while True:
     nome = raw_input('Nome do usuário: ')
     senha = raw_input('Senha do usuário: ')
 
@@ -10,4 +8,4 @@ while parada:
         print 'Valor inválido'
     else:
         print 'Valor válido'
-        parada = False
+        break
