@@ -51,7 +51,13 @@ def inicio_final(a, b):
 # Verifique quantos zeros há no final de um número inteiro positivo
 # Exemplo: 10010 tem 1 zero no fim e 908007000 possui três
 def zf(n):
-    return
+    n = str(n)[::-1]
+    sum = 0
+    i = 0
+    while '0' == n[i]:
+        sum += 1
+        i += 1
+    return sum
 
 
 # K. conta 2
@@ -97,10 +103,10 @@ def main():
     # test(inicio_final('abcde', 'xyz'), 'abcxydez')
     # test(inicio_final('Kitten', 'Donut'), 'KitDontenut')
 
-    # print ()
-    # print ('zeros finais')
-    # test(zf(10100100010000), 4)
-    # test(zf(90000000000000000010), 1)
+    print ()
+    print ('zeros finais')
+    test(zf(10100100010000), 4)
+    test(zf(90000000000000000010), 1)
 
     # print ()
     # print ('conta 2')
@@ -108,11 +114,11 @@ def main():
     # test(conta2(999), 300)
     # test(conta2(555), 216)
 
-    print ()
-    print ('inicio p2')
-    test(inip2(7), 46)
-    test(inip2(133), 316)
-    test(inip2(1024), 10)
+    # print ()
+    # print ('inicio p2')
+    # test(inip2(7), 46)
+    # test(inip2(133), 316)
+    # test(inip2(1024), 10)
 
 if __name__ == '__main__':
     main()
