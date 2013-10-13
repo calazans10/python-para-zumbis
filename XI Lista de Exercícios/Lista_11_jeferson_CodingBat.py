@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -44,7 +45,21 @@ def not_bad(s):
 # Dadas 2 strings, a e b, retorna a string
 #  a-inicio + b-inicio + a-final + b-final
 def inicio_final(a, b):
-    return
+    if len(a) % 2 == 0:
+        inicio_a = a[:len(a)/2]
+        final_a = a[len(a)/2:]
+    else:
+        inicio_a = a[:len(a)/2+1]
+        final_a = a[len(a)/2+1:]
+
+    if len(b) % 2 == 0:
+        inicio_b = b[:len(b)/2]
+        final_b = b[len(b)/2:]
+    else:
+        inicio_b = b[:len(b)/2+1]
+        final_b = b[len(b)/2+1:]
+
+    return inicio_a + inicio_b + final_a + final_b
 
 
 # J. zeros finais
@@ -97,11 +112,11 @@ def main():
     test(not_bad('This tea is not hot'), 'This tea is not hot')
     test(not_bad("It's bad yet not"), "It's bad yet not")
 
-    # print ()
-    # print ('inicio_final')
-    # test(inicio_final('abcd', 'xy'), 'abxcdy')
-    # test(inicio_final('abcde', 'xyz'), 'abcxydez')
-    # test(inicio_final('Kitten', 'Donut'), 'KitDontenut')
+    print ()
+    print ('inicio_final')
+    test(inicio_final('abcd', 'xy'), 'abxcdy')
+    test(inicio_final('abcde', 'xyz'), 'abcxydez')
+    test(inicio_final('Kitten', 'Donut'), 'KitDontenut')
 
     print ()
     print ('zeros finais')
