@@ -68,7 +68,8 @@ def palindrome(s):
 # palavra = 'ana'
 # busca ('ana e mariana gostam de banana', 'ana') == 4
 def busca(frase, palavra):
-    return frase.count(palavra)
+    gerador = palavra[:len(palavra)-1]
+    return frase.count(gerador)
 
 
 # Provided simple test() function used in main() to print
@@ -78,45 +79,45 @@ def test(obtido, esperado):
         prefixo = ' Parabéns!'
     else:
         prefixo = ' Ainda não'
-    print ('%s obtido: %s esperado: %s'
+    print('%s obtido: %s esperado: %s'
            % (prefixo, repr(obtido), repr(esperado)))
 
 
 def main():
-    print ('donuts')
+    print('donuts')
     test(donuts(4), 'Número de donuts: 4')
     test(donuts(9), 'Número de donuts: 9')
     test(donuts(10), 'Número de donuts: muitos')
     test(donuts(99), 'Número de donuts: muitos')
 
-    print ()
-    print ('pontas')
+    print()
+    print('pontas')
     test(pontas('palmeiras'), 'paas')
     test(pontas('algoritmos'), 'alos')
     test(pontas('a'), '')
     test(pontas('xyz'), 'xyyz')
 
-    print ()
-    print ('fixa_primeiro')
+    print()
+    print('fixa_primeiro')
     test(fixa_primeiro('babble'), 'ba**le')
     test(fixa_primeiro('aardvark'), 'a*rdv*rk')
     test(fixa_primeiro('google'), 'goo*le')
     test(fixa_primeiro('donut'), 'donut')
 
-    print ()
-    print ('mistura2')
+    print()
+    print('mistura2')
     test(mistura2('mix', 'pod'), 'pox mid')
     test(mistura2('dog', 'dinner'), 'dig donner')
     test(mistura2('gnash', 'sport'), 'spash gnort')
     test(mistura2('pezzy', 'firm'), 'fizzy perm')
 
-    print ()
-    print ('palindrome')
+    print()
+    print('palindrome')
     test(palindrome('asa'), True)
     test(palindrome('casa'), False)
 
-    print ()
-    print ('busca')
+    print()
+    print('busca')
     test(busca('ana e mariana gostam de banana', 'ana'), 4)
     test(busca('uma arara ou duas araras', 'ara'), 4)
 

@@ -8,4 +8,4 @@ if y > 8:
 else:
     x = x * 2
 
-print x + y
+print(x + y)
