@@ -191,7 +191,26 @@ def soma_na_lista(n, lista):
 # fila_tijolos(3, 1, 9) -> False
 # fila_tijolos(3, 2, 10) -> True
 def fila_tijolos(n_peq, n_gra, meta):
-    return
+    def fila_tijolos(n_peq, n_gra, meta):
+    meta_total = 0
+    total_pequenos = n_peq
+    total_grandes = n_gra
+    resto_cincos = meta % 5    
+    cincos_parametro = (meta - resto_cincos) / 5
+    if(cincos_parametro > total_grandes):
+        mediador = cincos_parametro - total_grandes
+        total_grandes = 0           
+        meta_total = meta_total + (mediador * 5) + resto_cincos 
+    else:
+        total_grandes = total_grandes - cincos_parametro 
+        meta_total = resto_cincos
+        if(meta_total == 0):
+            return True
+    total_pequenos = total_pequenos - meta_total
+    if(total_pequenos >= 0):           
+        return True
+    else:
+        return False
 
 
 # Provided simple test() function used in main() to print
