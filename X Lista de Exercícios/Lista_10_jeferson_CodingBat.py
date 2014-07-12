@@ -191,7 +191,6 @@ def soma_na_lista(n, lista):
 # fila_tijolos(3, 1, 9) -> False
 # fila_tijolos(3, 2, 10) -> True
 def fila_tijolos(n_peq, n_gra, meta):
-    def fila_tijolos(n_peq, n_gra, meta):
     meta_total = 0
     total_pequenos = n_peq
     total_grandes = n_gra
